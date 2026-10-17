@@ -1,0 +1,21 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Outer Eye Circle -->
+    <path
+        android:fillColor="#6cf8bb"
+        android:pathData="M54,34C40.7,34 29.3,42.1 24,54C29.3,65.9 40.7,74 54,74C67.3,74 78.7,65.9 84,54C78.7,42.1 67.3,34 54,34ZM54,67C46.8,67 41,61.2 41,54C41,46.8 46.8,41 54,41C61.2,41 67,46.8 67,54C67,61.2 61.2,67 54,67Z" />
+    <!-- Pupil / Spark of Knowledge -->
+    <path
+        android:fillColor="#ffffff"
+        android:pathData="M54,48C50.7,48 48,50.7 48,54C48,57.3 50.7,60 54,60C57.3,60 60,57.3 60,54C60,50.7 57.3,48 54,48Z" />
+    <!-- Stylized Book Pages / Eyelash Detail -->
+    <path
+        android:fillColor="#6cf8bb"
+        android:pathData="M44,28L47,31M54,26V30M64,28L61,31"
+        android:strokeColor="#6cf8bb"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"/>
+</vector>

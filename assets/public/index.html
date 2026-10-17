@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#003527">
+  <title>Nigraan — Every student, seen before they're lost.</title>
+  
+  <!-- Android PWA Manifest -->
+  <link rel="manifest" href="manifest.json">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Public+Sans:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  
+  <!-- Canvas Confetti CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+
+  <!-- PDF.js Text Extractor CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+
+  <!-- Tesseract.js Image OCR CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+
+  <!-- Firebase JS SDK (v10 compat) -->
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <script id="tailwind-config">
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: "#003527",
+            "primary-container": "#064e3b",
+            secondary: "#006c49",
+            "secondary-container": "#6cf8bb",
+            surface: "#f8f9fb",
+            "surface-container": "#edeef0"
+          },
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'Public Sans', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body>
+
+  <!-- Outer Viewport Wrapper -->
+  <div class="app-viewport-wrapper">
+
+    <!-- Smartphone Shell Container (Native Fullscreen Mode) -->
+    <div id="mobile-shell" class="mobile-device-shell fullscreen-mode">
+
+      <!-- Application Top Header -->
+      <header id="app-header" class="app-header"></header>
+
+      <!-- Main Application Content Area -->
+      <main id="app-content" class="app-content-body"></main>
+
+      <!-- Floating Action Button for Quick Data Entry / Check-in -->
+      <button id="fab-action-btn" onclick="appController.openDataEntryModal()" class="fab-button" title="Fast Data Entry">
+        <span class="material-symbols-outlined text-2xl">add</span>
+      </button>
+
+      <!-- Bottom Navigation Bar -->
+      <nav id="bottom-nav" class="stitch-bottom-nav"></nav>
+
+      <!-- Interactive Modal Overlay -->
+      <div id="modal-overlay" class="modal-overlay" onclick="if(event.target === this) appController.closeModal()">
+        <div id="modal-container" class="modal-card"></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Application Logic Scripts -->
+  <script src="js/auth-service.js"></script>
+  <script src="js/firebase-service.js"></script>
+  <script src="js/seed-data.js"></script>
+  <script src="js/ai-engine.js"></script>
+  <script src="js/student-voice.js"></script>
+  <script src="js/digital-twin.js"></script>
+  <script src="js/ustaad-ai.js"></script>
+  <script src="js/simulator.js"></script>
+  <script src="js/recovery-plan.js"></script>
+  <script src="js/app.js"></script>
+
+  <!-- Register Service Worker for Android PWA APK Installation -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js').catch(err => console.log('SW reg error:', err));
+    }
+  </script>
+</body>
+</html>
